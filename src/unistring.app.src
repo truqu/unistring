@@ -1,12 +1,10 @@
 {application, unistring,
- [
-  {description, "Unicode utf-8 functions"},
+ [{description, "Unicode utf-8 functions"},
   {vsn, "0.1.0"},
-  {registered, []},
-  {applications, [
-                  kernel,
+  {modules, [unistring]},
+  {applications, [kernel,
                   stdlib
                  ]},
-  {mod, { unistring_app, []}},
+  {registered, []},
   {env, []}
  ]}.
