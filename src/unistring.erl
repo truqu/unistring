@@ -2,23 +2,23 @@
 -export([to_upper/1, to_lower/1, to_title/1]).
 
 to_upper(S) when is_binary(S) ->
-	unicode:characters_to_binary(to_upper(unicode:characters_to_list(S)));
+    << <<(char_to_upper(A))/utf8>> || <<A/utf8>> <= S >>;
 to_upper(S) when is_list(S) ->
-    [char_to_upper(C) || C <- S];
+    [ char_to_upper(C) || C <- S ];
 to_upper(C) when is_integer(C) ->
     char_to_upper(C).
 
 to_lower(S) when is_binary(S) ->
-	unicode:characters_to_binary(to_lower(unicode:characters_to_list(S)));
+    << <<(char_to_lower(A))/utf8>> || <<A/utf8>> <= S >>;
 to_lower(S) when is_list(S) ->
-    [char_to_lower(C) || C <- S];
+    [ char_to_lower(C) || C <- S ];
 to_lower(C) when is_integer(C) ->
     char_to_lower(C).
 
 to_title(S) when is_binary(S) ->
-	unicode:characters_to_binary(to_title(unicode:characters_to_list(S)));
+    << <<(char_to_title(A))/utf8>> || <<A/utf8>> <= S >>;
 to_title(S) when is_list(S) ->
-    [char_to_title(C) || C <- S];
+    [ char_to_title(C) || C <- S ];
 to_title(C) when is_integer(C) ->
     char_to_title(C).
 
