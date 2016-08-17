@@ -1,7 +1,7 @@
 {application, unistring,
  [{description, "Unicode utf-8 functions"},
   {vsn, "0.1.0"},
-  {modules, [unistring]},
+  {modules, []},
   {applications, [kernel,
                   stdlib
                  ]},
